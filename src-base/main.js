@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import app from './components/app.vue'
+import app from './app.vue'
 
 // 创建vm对象
 new Vue({
