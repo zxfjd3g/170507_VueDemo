@@ -10,8 +10,8 @@
       </div>
     </header>
     <div class="container">
-      <add></add>
-      <list :comments="comments"></list>
+      <add :addComment="addComment"></add>
+      <comment-list :comments="comments" :delete-comment="deleteComment"></comment-list>
     </div>
   </div>
 </template>
@@ -31,8 +31,18 @@
       }
     },
 
+    methods: {
+      addComment (comment) {
+        this.comments.unshift(comment)
+      },
+      deleteComment (index) {
+        this.comments.splice(index, 1)
+      }
+    },
+
     components: {
-      add, list
+      "Add": add,
+      "CommentList": list
     }
   }
 </script>
